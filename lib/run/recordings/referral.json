@@ -1,0 +1,485 @@
+{
+ "order": "referral",
+ "source": "placeholder",
+ "events": [
+  {
+   "t": 0,
+   "type": "run.start",
+   "order": "referral"
+  },
+  {
+   "t": 0.9,
+   "type": "read.field",
+   "key": "patient",
+   "label": "Patient",
+   "value": "Clara Benning"
+  },
+  {
+   "t": 1.2,
+   "type": "read.field",
+   "key": "dob",
+   "label": "Date of birth",
+   "value": "12/O3/1986"
+  },
+  {
+   "t": 1.5,
+   "type": "read.field",
+   "key": "patientRef",
+   "label": "Patient ref",
+   "value": "WFP-20417"
+  },
+  {
+   "t": 1.8,
+   "type": "read.field",
+   "key": "referrer",
+   "label": "Referrer",
+   "value": "Dr H. Okafor, Westbrook Family Practice"
+  },
+  {
+   "t": 2.1,
+   "type": "read.field",
+   "key": "referrerContact",
+   "label": "Referrer contact",
+   "value": "info@westbrookfp.example"
+  },
+  {
+   "t": 2.4,
+   "type": "read.field",
+   "key": "specialty",
+   "label": "Specialty requested",
+   "value": "Dermatology"
+  },
+  {
+   "t": 2.7,
+   "type": "read.field",
+   "key": "reason",
+   "label": "Reason (as written)",
+   "value": "Persistent itchy rash on both forearms, ~3 months, not settling with emollients"
+  },
+  {
+   "t": 3,
+   "type": "read.field",
+   "key": "urgency",
+   "label": "Urgency (as stated)",
+   "value": "Earlier appointment requested"
+  },
+  {
+   "t": 3.3,
+   "type": "read.field",
+   "key": "attachments",
+   "label": "Attachments",
+   "value": "Photo (1)"
+  },
+  {
+   "t": 3.75,
+   "type": "check",
+   "rule": "Required fields present",
+   "result": "pass"
+  },
+  {
+   "t": 4.2,
+   "type": "check",
+   "rule": "Date of birth is a valid date",
+   "result": "reject",
+   "key": "dob",
+   "note": "\"12/O3/1986\" is not a valid date"
+  },
+  {
+   "t": 4.7,
+   "type": "retry",
+   "attempt": 1,
+   "key": "dob"
+  },
+  {
+   "t": 5.6,
+   "type": "read.field",
+   "key": "dob",
+   "label": "Date of birth",
+   "value": "1986-03-12"
+  },
+  {
+   "t": 6.05,
+   "type": "check",
+   "rule": "Date of birth is a valid date",
+   "result": "pass",
+   "key": "dob"
+  },
+  {
+   "t": 6.5,
+   "type": "check",
+   "rule": "Referrer reachable by phone",
+   "result": "flag",
+   "key": "referrerContact",
+   "note": "No phone number, email only"
+  },
+  {
+   "t": 6.95,
+   "type": "check",
+   "rule": "Urgency stated by referrer",
+   "result": "flag",
+   "key": "urgency",
+   "note": "For staff to decide"
+  },
+  {
+   "t": 8.05,
+   "type": "route",
+   "destination": "Dermatology outpatients",
+   "confidence": 0.94,
+   "reason": "Letter is addressed to dermatology; skin complaint described"
+  },
+  {
+   "t": 8.7,
+   "type": "write.delta",
+   "text": "Dear "
+  },
+  {
+   "t": 8.75,
+   "type": "write.delta",
+   "text": "Dr "
+  },
+  {
+   "t": 8.8,
+   "type": "write.delta",
+   "text": "Okafor,\n\n"
+  },
+  {
+   "t": 8.85,
+   "type": "write.delta",
+   "text": "Thank "
+  },
+  {
+   "t": 8.9,
+   "type": "write.delta",
+   "text": "you "
+  },
+  {
+   "t": 8.95,
+   "type": "write.delta",
+   "text": "for "
+  },
+  {
+   "t": 9,
+   "type": "write.delta",
+   "text": "your "
+  },
+  {
+   "t": 9.05,
+   "type": "write.delta",
+   "text": "referral "
+  },
+  {
+   "t": 9.1,
+   "type": "write.delta",
+   "text": "for "
+  },
+  {
+   "t": 9.15,
+   "type": "write.delta",
+   "text": "Ms "
+  },
+  {
+   "t": 9.2,
+   "type": "write.delta",
+   "text": "Clara "
+  },
+  {
+   "t": 9.25,
+   "type": "write.delta",
+   "text": "Benning "
+  },
+  {
+   "t": 9.3,
+   "type": "write.delta",
+   "text": "(WFP-20417). "
+  },
+  {
+   "t": 9.35,
+   "type": "write.delta",
+   "text": "It "
+  },
+  {
+   "t": 9.4,
+   "type": "write.delta",
+   "text": "has "
+  },
+  {
+   "t": 9.45,
+   "type": "write.delta",
+   "text": "been "
+  },
+  {
+   "t": 9.5,
+   "type": "write.delta",
+   "text": "received "
+  },
+  {
+   "t": 9.55,
+   "type": "write.delta",
+   "text": "and "
+  },
+  {
+   "t": 9.6,
+   "type": "write.delta",
+   "text": "routed "
+  },
+  {
+   "t": 9.65,
+   "type": "write.delta",
+   "text": "to "
+  },
+  {
+   "t": 9.7,
+   "type": "write.delta",
+   "text": "Dermatology "
+  },
+  {
+   "t": 9.75,
+   "type": "write.delta",
+   "text": "Outpatients "
+  },
+  {
+   "t": 9.8,
+   "type": "write.delta",
+   "text": "at "
+  },
+  {
+   "t": 9.85,
+   "type": "write.delta",
+   "text": "St "
+  },
+  {
+   "t": 9.9,
+   "type": "write.delta",
+   "text": "Anne's "
+  },
+  {
+   "t": 9.95,
+   "type": "write.delta",
+   "text": "Clinic.\n\n"
+  },
+  {
+   "t": 10,
+   "type": "write.delta",
+   "text": "We "
+  },
+  {
+   "t": 10.05,
+   "type": "write.delta",
+   "text": "couldn't "
+  },
+  {
+   "t": 10.1,
+   "type": "write.delta",
+   "text": "find "
+  },
+  {
+   "t": 10.15,
+   "type": "write.delta",
+   "text": "a "
+  },
+  {
+   "t": 10.2,
+   "type": "write.delta",
+   "text": "phone "
+  },
+  {
+   "t": 10.25,
+   "type": "write.delta",
+   "text": "number "
+  },
+  {
+   "t": 10.3,
+   "type": "write.delta",
+   "text": "for "
+  },
+  {
+   "t": 10.35,
+   "type": "write.delta",
+   "text": "your "
+  },
+  {
+   "t": 10.4,
+   "type": "write.delta",
+   "text": "practice. "
+  },
+  {
+   "t": 10.45,
+   "type": "write.delta",
+   "text": "Could "
+  },
+  {
+   "t": 10.5,
+   "type": "write.delta",
+   "text": "you "
+  },
+  {
+   "t": 10.55,
+   "type": "write.delta",
+   "text": "reply "
+  },
+  {
+   "t": 10.6,
+   "type": "write.delta",
+   "text": "with "
+  },
+  {
+   "t": 10.65,
+   "type": "write.delta",
+   "text": "a "
+  },
+  {
+   "t": 10.7,
+   "type": "write.delta",
+   "text": "direct "
+  },
+  {
+   "t": 10.75,
+   "type": "write.delta",
+   "text": "line "
+  },
+  {
+   "t": 10.8,
+   "type": "write.delta",
+   "text": "so "
+  },
+  {
+   "t": 10.85,
+   "type": "write.delta",
+   "text": "our "
+  },
+  {
+   "t": 10.9,
+   "type": "write.delta",
+   "text": "booking "
+  },
+  {
+   "t": 10.95,
+   "type": "write.delta",
+   "text": "team "
+  },
+  {
+   "t": 11,
+   "type": "write.delta",
+   "text": "can "
+  },
+  {
+   "t": 11.05,
+   "type": "write.delta",
+   "text": "reach "
+  },
+  {
+   "t": 11.1,
+   "type": "write.delta",
+   "text": "you?\n\n"
+  },
+  {
+   "t": 11.15,
+   "type": "write.delta",
+   "text": "Ms "
+  },
+  {
+   "t": 11.2,
+   "type": "write.delta",
+   "text": "Benning's "
+  },
+  {
+   "t": 11.25,
+   "type": "write.delta",
+   "text": "request "
+  },
+  {
+   "t": 11.3,
+   "type": "write.delta",
+   "text": "for "
+  },
+  {
+   "t": 11.35,
+   "type": "write.delta",
+   "text": "an "
+  },
+  {
+   "t": 11.4,
+   "type": "write.delta",
+   "text": "earlier "
+  },
+  {
+   "t": 11.45,
+   "type": "write.delta",
+   "text": "appointment "
+  },
+  {
+   "t": 11.5,
+   "type": "write.delta",
+   "text": "has "
+  },
+  {
+   "t": 11.55,
+   "type": "write.delta",
+   "text": "been "
+  },
+  {
+   "t": 11.6,
+   "type": "write.delta",
+   "text": "passed "
+  },
+  {
+   "t": 11.65,
+   "type": "write.delta",
+   "text": "to "
+  },
+  {
+   "t": 11.7,
+   "type": "write.delta",
+   "text": "the "
+  },
+  {
+   "t": 11.75,
+   "type": "write.delta",
+   "text": "clinic "
+  },
+  {
+   "t": 11.8,
+   "type": "write.delta",
+   "text": "team.\n\n"
+  },
+  {
+   "t": 11.85,
+   "type": "write.delta",
+   "text": "Kind "
+  },
+  {
+   "t": 11.9,
+   "type": "write.delta",
+   "text": "regards,\n"
+  },
+  {
+   "t": 11.95,
+   "type": "write.delta",
+   "text": "Referrals "
+  },
+  {
+   "t": 12,
+   "type": "write.delta",
+   "text": "Office, "
+  },
+  {
+   "t": 12.05,
+   "type": "write.delta",
+   "text": "St "
+  },
+  {
+   "t": 12.1,
+   "type": "write.delta",
+   "text": "Anne's "
+  },
+  {
+   "t": 12.15,
+   "type": "write.delta",
+   "text": "Clinic"
+  },
+  {
+   "t": 12.95,
+   "type": "approve.request"
+  }
+ ]
+}

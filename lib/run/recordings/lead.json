@@ -1,0 +1,390 @@
+{
+ "order": "lead",
+ "source": "placeholder",
+ "events": [
+  {
+   "t": 0,
+   "type": "run.start",
+   "order": "lead"
+  },
+  {
+   "t": 0.9,
+   "type": "read.field",
+   "key": "name",
+   "label": "Name",
+   "value": "Daniel Mercer"
+  },
+  {
+   "t": 1.2,
+   "type": "read.field",
+   "key": "company",
+   "label": "Company",
+   "value": "Fieldnote"
+  },
+  {
+   "t": 1.5,
+   "type": "read.field",
+   "key": "need",
+   "label": "Need",
+   "value": "AI assistant that drafts support replies from docs and order data, human approves before sending"
+  },
+  {
+   "t": 1.8,
+   "type": "read.field",
+   "key": "size",
+   "label": "Team size",
+   "value": "40 people"
+  },
+  {
+   "t": 2.1,
+   "type": "read.field",
+   "key": "timeline",
+   "label": "Timeline",
+   "value": "Start next month"
+  },
+  {
+   "t": 2.4,
+   "type": "read.field",
+   "key": "budget",
+   "label": "Budget",
+   "value": ""
+  },
+  {
+   "t": 2.85,
+   "type": "check",
+   "rule": "Required fields present",
+   "result": "pass"
+  },
+  {
+   "t": 3.3,
+   "type": "check",
+   "rule": "Looks like a real enquiry",
+   "result": "pass",
+   "key": "need"
+  },
+  {
+   "t": 3.75,
+   "type": "check",
+   "rule": "Budget stated",
+   "result": "flag",
+   "key": "budget",
+   "note": "Ask on the call"
+  },
+  {
+   "t": 4.85,
+   "type": "route",
+   "destination": "AI product",
+   "confidence": 0.89,
+   "reason": "Drafting assistant with human approval over company data"
+  },
+  {
+   "t": 5.5,
+   "type": "write.delta",
+   "text": "Hi "
+  },
+  {
+   "t": 5.55,
+   "type": "write.delta",
+   "text": "Daniel,\n\n"
+  },
+  {
+   "t": 5.6,
+   "type": "write.delta",
+   "text": "Thanks "
+  },
+  {
+   "t": 5.65,
+   "type": "write.delta",
+   "text": "for "
+  },
+  {
+   "t": 5.7,
+   "type": "write.delta",
+   "text": "getting "
+  },
+  {
+   "t": 5.75,
+   "type": "write.delta",
+   "text": "in "
+  },
+  {
+   "t": 5.8,
+   "type": "write.delta",
+   "text": "touch. "
+  },
+  {
+   "t": 5.85,
+   "type": "write.delta",
+   "text": "A "
+  },
+  {
+   "t": 5.9,
+   "type": "write.delta",
+   "text": "drafting "
+  },
+  {
+   "t": 5.95,
+   "type": "write.delta",
+   "text": "assistant "
+  },
+  {
+   "t": 6,
+   "type": "write.delta",
+   "text": "your "
+  },
+  {
+   "t": 6.05,
+   "type": "write.delta",
+   "text": "team "
+  },
+  {
+   "t": 6.1,
+   "type": "write.delta",
+   "text": "approves "
+  },
+  {
+   "t": 6.15,
+   "type": "write.delta",
+   "text": "before "
+  },
+  {
+   "t": 6.2,
+   "type": "write.delta",
+   "text": "anything "
+  },
+  {
+   "t": 6.25,
+   "type": "write.delta",
+   "text": "goes "
+  },
+  {
+   "t": 6.3,
+   "type": "write.delta",
+   "text": "out "
+  },
+  {
+   "t": 6.35,
+   "type": "write.delta",
+   "text": "is "
+  },
+  {
+   "t": 6.4,
+   "type": "write.delta",
+   "text": "exactly "
+  },
+  {
+   "t": 6.45,
+   "type": "write.delta",
+   "text": "how "
+  },
+  {
+   "t": 6.5,
+   "type": "write.delta",
+   "text": "I "
+  },
+  {
+   "t": 6.55,
+   "type": "write.delta",
+   "text": "like "
+  },
+  {
+   "t": 6.6,
+   "type": "write.delta",
+   "text": "to "
+  },
+  {
+   "t": 6.65,
+   "type": "write.delta",
+   "text": "build "
+  },
+  {
+   "t": 6.7,
+   "type": "write.delta",
+   "text": "these: "
+  },
+  {
+   "t": 6.75,
+   "type": "write.delta",
+   "text": "grounded "
+  },
+  {
+   "t": 6.8,
+   "type": "write.delta",
+   "text": "in "
+  },
+  {
+   "t": 6.85,
+   "type": "write.delta",
+   "text": "your "
+  },
+  {
+   "t": 6.9,
+   "type": "write.delta",
+   "text": "docs "
+  },
+  {
+   "t": 6.95,
+   "type": "write.delta",
+   "text": "and "
+  },
+  {
+   "t": 7,
+   "type": "write.delta",
+   "text": "order "
+  },
+  {
+   "t": 7.05,
+   "type": "write.delta",
+   "text": "data, "
+  },
+  {
+   "t": 7.1,
+   "type": "write.delta",
+   "text": "with "
+  },
+  {
+   "t": 7.15,
+   "type": "write.delta",
+   "text": "every "
+  },
+  {
+   "t": 7.2,
+   "type": "write.delta",
+   "text": "reply "
+  },
+  {
+   "t": 7.25,
+   "type": "write.delta",
+   "text": "checked "
+  },
+  {
+   "t": 7.3,
+   "type": "write.delta",
+   "text": "by "
+  },
+  {
+   "t": 7.35,
+   "type": "write.delta",
+   "text": "a "
+  },
+  {
+   "t": 7.4,
+   "type": "write.delta",
+   "text": "person.\n\n"
+  },
+  {
+   "t": 7.45,
+   "type": "write.delta",
+   "text": "Would "
+  },
+  {
+   "t": 7.5,
+   "type": "write.delta",
+   "text": "a "
+  },
+  {
+   "t": 7.55,
+   "type": "write.delta",
+   "text": "30-minute "
+  },
+  {
+   "t": 7.6,
+   "type": "write.delta",
+   "text": "call "
+  },
+  {
+   "t": 7.65,
+   "type": "write.delta",
+   "text": "next "
+  },
+  {
+   "t": 7.7,
+   "type": "write.delta",
+   "text": "week "
+  },
+  {
+   "t": 7.75,
+   "type": "write.delta",
+   "text": "work? "
+  },
+  {
+   "t": 7.8,
+   "type": "write.delta",
+   "text": "It "
+  },
+  {
+   "t": 7.85,
+   "type": "write.delta",
+   "text": "would "
+  },
+  {
+   "t": 7.9,
+   "type": "write.delta",
+   "text": "also "
+  },
+  {
+   "t": 7.95,
+   "type": "write.delta",
+   "text": "help "
+  },
+  {
+   "t": 8,
+   "type": "write.delta",
+   "text": "to "
+  },
+  {
+   "t": 8.05,
+   "type": "write.delta",
+   "text": "know "
+  },
+  {
+   "t": 8.1,
+   "type": "write.delta",
+   "text": "the "
+  },
+  {
+   "t": 8.15,
+   "type": "write.delta",
+   "text": "budget "
+  },
+  {
+   "t": 8.2,
+   "type": "write.delta",
+   "text": "you "
+  },
+  {
+   "t": 8.25,
+   "type": "write.delta",
+   "text": "have "
+  },
+  {
+   "t": 8.3,
+   "type": "write.delta",
+   "text": "in "
+  },
+  {
+   "t": 8.35,
+   "type": "write.delta",
+   "text": "mind.\n\n"
+  },
+  {
+   "t": 8.4,
+   "type": "write.delta",
+   "text": "Best,\n"
+  },
+  {
+   "t": 8.45,
+   "type": "write.delta",
+   "text": "[Your "
+  },
+  {
+   "t": 8.5,
+   "type": "write.delta",
+   "text": "Name]"
+  },
+  {
+   "t": 9.3,
+   "type": "approve.request"
+  }
+ ]
+}

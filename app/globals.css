@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+/* Dark-only by design: the experience is a lit organism in a dark void. */
+:root {
+  --bg: #07080a;
+  --fg: #ece8e1;
+  --muted: #8b8f96;
+  --human: #ffb070;
+  --machine: #bdebff;
+  --fused: #f4efe6;
+  --surface: #0e1013;
+  --line: #23262b;
+  /* Light direction (/light): paper, ink, one vermilion for human moments. */
+  --paper: #f1efe9;
+  --paper-2: #e8e5dd;
+  --ink: #16171a;
+  --ink-2: #5a5c61;
+  --vermilion: #e2401c;
+  --studio: #eeece6;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-human: var(--human);
+  --color-machine: var(--machine);
+  --color-fused: var(--fused);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-vermilion: var(--vermilion);
+  --color-studio: var(--studio);
+  --color-rule: color-mix(in srgb, var(--ink) 18%, transparent);
+  --font-plex: var(--font-plex-sans);
+  --font-plexmono: var(--font-plex-mono);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+}
+
+.chapter-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.strand-label {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.hold-ring {
+  --p: 0;
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg);
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.hold-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(var(--fused) calc(var(--p) * 1turn), color-mix(in srgb, var(--fg) 18%, transparent) 0);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1px));
+}
+.hold-ring:focus-visible {
+  outline: 1px solid var(--fused);
+  outline-offset: 6px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    translate: 0 1rem;
+    filter: blur(6px);
+  }
+}
+.fade-in {
+  animation: fade-in 2.4s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+/* Text settles in as its chapter scrolls into view (no-op where scroll timelines aren't supported). */
+@supports (animation-timeline: view()) {
+  .chapter {
+    view-timeline: --chapter block;
+  }
+  .reveal {
+    animation: fade-in linear both;
+    animation-timeline: --chapter;
+    animation-range: entry 40% entry 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .reveal {
+    animation: none;
+  }
+}
+
+/* Off the home page, the organism dims as the reader scrolls into the content. */
+@keyframes scene-dim {
+  to {
+    opacity: 0.2;
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .scene-fade {
+    animation: scene-dim linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 90svh;
+  }
+}
+
+.hold-ring--human::before {
+  background: conic-gradient(var(--human) calc(var(--p) * 1turn), color-mix(in srgb, var(--human) 22%, transparent) 0);
+}
+
+/* The machine steps back while the visitor reads the work. */
+[data-scene="dim"] .scene {
+  opacity: 0.3;
+}
+.scene {
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Light direction: the page is a work order. Paper has a faint fibre; rules draw themselves on arrival. */
+.paper {
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='0.035'/%3E%3C/svg%3E");
+  color: var(--ink);
+  color-scheme: light;
+}
+.condensed {
+  font-family: var(--font-plex-sans);
+  font-stretch: 75%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+@keyframes draw-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes draw-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes develop {
+  from {
+    opacity: 0;
+  }
+}
+.draw-x,
+.draw-y,
+.develop,
+.ink-in {
+  animation: draw-x 0.8s cubic-bezier(0.4, 0, 0.2, 1) calc(var(--i, 0) * 70ms) both;
+}
+.draw-x {
+  transform-origin: left;
+}
+.draw-y {
+  transform-origin: top;
+  animation-name: draw-y;
+}
+.ink-in {
+  animation-name: develop;
+  animation-duration: 0.6s;
+}
+.develop {
+  animation: develop 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both; /* the figure rises out of the paper */
+}
+@media (prefers-reduced-motion: reduce) {
+  .draw-x,
+  .draw-y,
+  .develop,
+  .ink-in {
+    animation: none;
+  }
+}

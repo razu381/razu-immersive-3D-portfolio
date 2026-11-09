@@ -1,0 +1,493 @@
+{
+ "order": "brief",
+ "source": "placeholder",
+ "events": [
+  {
+   "t": 0,
+   "type": "run.start",
+   "order": "brief"
+  },
+  {
+   "t": 0.9,
+   "type": "read.field",
+   "key": "studio",
+   "label": "Studio",
+   "value": "Northbound Studio"
+  },
+  {
+   "t": 1.2,
+   "type": "read.field",
+   "key": "client",
+   "label": "Client",
+   "value": "Halden Audio"
+  },
+  {
+   "t": 1.5,
+   "type": "read.field",
+   "key": "deliverables",
+   "label": "Deliverables",
+   "value": "Product launch site with scroll-driven WebGL hero + CMS"
+  },
+  {
+   "t": 1.8,
+   "type": "read.field",
+   "key": "deadline",
+   "label": "Deadline",
+   "value": "3 weeks"
+  },
+  {
+   "t": 2.1,
+   "type": "read.field",
+   "key": "budget",
+   "label": "Budget",
+   "value": ""
+  },
+  {
+   "t": 2.4,
+   "type": "read.field",
+   "key": "stack",
+   "label": "Stack",
+   "value": "Next.js, Sanity, WebGL"
+  },
+  {
+   "t": 2.7,
+   "type": "read.field",
+   "key": "contact",
+   "label": "Contact",
+   "value": "Maya Lindqvist, maya@northbound.example"
+  },
+  {
+   "t": 3.15,
+   "type": "check",
+   "rule": "Required fields present",
+   "result": "pass"
+  },
+  {
+   "t": 3.6,
+   "type": "check",
+   "rule": "Deadline is realistic",
+   "result": "flag",
+   "key": "deadline",
+   "note": "3 weeks for WebGL + CMS is tight"
+  },
+  {
+   "t": 4.05,
+   "type": "check",
+   "rule": "Budget stated",
+   "result": "flag",
+   "key": "budget",
+   "note": "Ask before scoping"
+  },
+  {
+   "t": 5.15,
+   "type": "route",
+   "destination": "WebGL build",
+   "confidence": 0.91,
+   "reason": "Scroll-driven WebGL hero is the core deliverable"
+  },
+  {
+   "t": 5.8,
+   "type": "write.delta",
+   "text": "Hi "
+  },
+  {
+   "t": 5.85,
+   "type": "write.delta",
+   "text": "Maya,\n\n"
+  },
+  {
+   "t": 5.9,
+   "type": "write.delta",
+   "text": "Thanks "
+  },
+  {
+   "t": 5.95,
+   "type": "write.delta",
+   "text": "for "
+  },
+  {
+   "t": 6,
+   "type": "write.delta",
+   "text": "thinking "
+  },
+  {
+   "t": 6.05,
+   "type": "write.delta",
+   "text": "of "
+  },
+  {
+   "t": 6.1,
+   "type": "write.delta",
+   "text": "me. "
+  },
+  {
+   "t": 6.15,
+   "type": "write.delta",
+   "text": "Halden "
+  },
+  {
+   "t": 6.2,
+   "type": "write.delta",
+   "text": "Audio "
+  },
+  {
+   "t": 6.25,
+   "type": "write.delta",
+   "text": "sounds "
+  },
+  {
+   "t": 6.3,
+   "type": "write.delta",
+   "text": "like "
+  },
+  {
+   "t": 6.35,
+   "type": "write.delta",
+   "text": "a "
+  },
+  {
+   "t": 6.4,
+   "type": "write.delta",
+   "text": "great "
+  },
+  {
+   "t": 6.45,
+   "type": "write.delta",
+   "text": "launch, "
+  },
+  {
+   "t": 6.5,
+   "type": "write.delta",
+   "text": "and "
+  },
+  {
+   "t": 6.55,
+   "type": "write.delta",
+   "text": "I'd "
+  },
+  {
+   "t": 6.6,
+   "type": "write.delta",
+   "text": "love "
+  },
+  {
+   "t": 6.65,
+   "type": "write.delta",
+   "text": "to "
+  },
+  {
+   "t": 6.7,
+   "type": "write.delta",
+   "text": "help.\n\n"
+  },
+  {
+   "t": 6.75,
+   "type": "write.delta",
+   "text": "A "
+  },
+  {
+   "t": 6.8,
+   "type": "write.delta",
+   "text": "first "
+  },
+  {
+   "t": 6.85,
+   "type": "write.delta",
+   "text": "scope:\n"
+  },
+  {
+   "t": 6.9,
+   "type": "write.delta",
+   "text": "• "
+  },
+  {
+   "t": 6.95,
+   "type": "write.delta",
+   "text": "Scroll-driven "
+  },
+  {
+   "t": 7,
+   "type": "write.delta",
+   "text": "WebGL "
+  },
+  {
+   "t": 7.05,
+   "type": "write.delta",
+   "text": "hero, "
+  },
+  {
+   "t": 7.1,
+   "type": "write.delta",
+   "text": "designed "
+  },
+  {
+   "t": 7.15,
+   "type": "write.delta",
+   "text": "in "
+  },
+  {
+   "t": 7.2,
+   "type": "write.delta",
+   "text": "code "
+  },
+  {
+   "t": 7.25,
+   "type": "write.delta",
+   "text": "with "
+  },
+  {
+   "t": 7.3,
+   "type": "write.delta",
+   "text": "your "
+  },
+  {
+   "t": 7.35,
+   "type": "write.delta",
+   "text": "team\n"
+  },
+  {
+   "t": 7.4,
+   "type": "write.delta",
+   "text": "• "
+  },
+  {
+   "t": 7.45,
+   "type": "write.delta",
+   "text": "Next.js "
+  },
+  {
+   "t": 7.5,
+   "type": "write.delta",
+   "text": "+ "
+  },
+  {
+   "t": 7.55,
+   "type": "write.delta",
+   "text": "Sanity "
+  },
+  {
+   "t": 7.6,
+   "type": "write.delta",
+   "text": "so "
+  },
+  {
+   "t": 7.65,
+   "type": "write.delta",
+   "text": "the "
+  },
+  {
+   "t": 7.7,
+   "type": "write.delta",
+   "text": "copy "
+  },
+  {
+   "t": 7.75,
+   "type": "write.delta",
+   "text": "stays "
+  },
+  {
+   "t": 7.8,
+   "type": "write.delta",
+   "text": "editable\n"
+  },
+  {
+   "t": 7.85,
+   "type": "write.delta",
+   "text": "• "
+  },
+  {
+   "t": 7.9,
+   "type": "write.delta",
+   "text": "A "
+  },
+  {
+   "t": 7.95,
+   "type": "write.delta",
+   "text": "performance "
+  },
+  {
+   "t": 8,
+   "type": "write.delta",
+   "text": "pass "
+  },
+  {
+   "t": 8.05,
+   "type": "write.delta",
+   "text": "for "
+  },
+  {
+   "t": 8.1,
+   "type": "write.delta",
+   "text": "mobile "
+  },
+  {
+   "t": 8.15,
+   "type": "write.delta",
+   "text": "before "
+  },
+  {
+   "t": 8.2,
+   "type": "write.delta",
+   "text": "launch\n\n"
+  },
+  {
+   "t": 8.25,
+   "type": "write.delta",
+   "text": "Honest "
+  },
+  {
+   "t": 8.3,
+   "type": "write.delta",
+   "text": "note: "
+  },
+  {
+   "t": 8.35,
+   "type": "write.delta",
+   "text": "three "
+  },
+  {
+   "t": 8.4,
+   "type": "write.delta",
+   "text": "weeks "
+  },
+  {
+   "t": 8.45,
+   "type": "write.delta",
+   "text": "is "
+  },
+  {
+   "t": 8.5,
+   "type": "write.delta",
+   "text": "tight "
+  },
+  {
+   "t": 8.55,
+   "type": "write.delta",
+   "text": "for "
+  },
+  {
+   "t": 8.6,
+   "type": "write.delta",
+   "text": "WebGL "
+  },
+  {
+   "t": 8.65,
+   "type": "write.delta",
+   "text": "plus "
+  },
+  {
+   "t": 8.7,
+   "type": "write.delta",
+   "text": "a "
+  },
+  {
+   "t": 8.75,
+   "type": "write.delta",
+   "text": "CMS. "
+  },
+  {
+   "t": 8.8,
+   "type": "write.delta",
+   "text": "A "
+  },
+  {
+   "t": 8.85,
+   "type": "write.delta",
+   "text": "short "
+  },
+  {
+   "t": 8.9,
+   "type": "write.delta",
+   "text": "call "
+  },
+  {
+   "t": 8.95,
+   "type": "write.delta",
+   "text": "this "
+  },
+  {
+   "t": 9,
+   "type": "write.delta",
+   "text": "week "
+  },
+  {
+   "t": 9.05,
+   "type": "write.delta",
+   "text": "would "
+  },
+  {
+   "t": 9.1,
+   "type": "write.delta",
+   "text": "help "
+  },
+  {
+   "t": 9.15,
+   "type": "write.delta",
+   "text": "us "
+  },
+  {
+   "t": 9.2,
+   "type": "write.delta",
+   "text": "shape "
+  },
+  {
+   "t": 9.25,
+   "type": "write.delta",
+   "text": "what's "
+  },
+  {
+   "t": 9.3,
+   "type": "write.delta",
+   "text": "realistic.\n\n"
+  },
+  {
+   "t": 9.35,
+   "type": "write.delta",
+   "text": "Could "
+  },
+  {
+   "t": 9.4,
+   "type": "write.delta",
+   "text": "you "
+  },
+  {
+   "t": 9.45,
+   "type": "write.delta",
+   "text": "share "
+  },
+  {
+   "t": 9.5,
+   "type": "write.delta",
+   "text": "the "
+  },
+  {
+   "t": 9.55,
+   "type": "write.delta",
+   "text": "budget "
+  },
+  {
+   "t": 9.6,
+   "type": "write.delta",
+   "text": "range?\n\n"
+  },
+  {
+   "t": 9.65,
+   "type": "write.delta",
+   "text": "Best,\n"
+  },
+  {
+   "t": 9.7,
+   "type": "write.delta",
+   "text": "[Your "
+  },
+  {
+   "t": 9.75,
+   "type": "write.delta",
+   "text": "Name]"
+  },
+  {
+   "t": 10.55,
+   "type": "approve.request"
+  }
+ ]
+}
